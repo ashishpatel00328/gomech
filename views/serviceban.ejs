@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/css') %>
+</head>
+    <%- include('partials/headerRegistration') %>
+   
+<body style="background-image:url('img/bg-service.jpg'); width: 100%;">
+    <section id="about" class="registration-section text-center" style="margin-top: 15%;margin-bottom: 15%;">
+            <div class="container" style="width: 30%; height: 100%; margin-top: 100px;">
+                    <form action="" method="POST">
+                        <h2 style="color: whitesmoke;">Service Form</h2>
+                            <div class="form-group" style="width: 100%;">
+                                <label for="inputService" style="color: #b5b5b5;">Jenis Kendaraan</label>
+                                <select id="inputService" name="service" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option value='Sepeda (Rp.20.000/pcs)'>Sepeda (Rp.20.000/pcs)</option>
+                                    <option value='Motor (Rp.50.000/pcs)'>Motor (Rp.50.000/pcs)</option>
+                                    <option value='Mobil (Rp.100.000/pcs)'>Mobil (Rp.100.000/pcs)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                    <label for="location" style="color: #b5b5b5;">Location</label>
+                                    <input type="type" class="form-control" name="location" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter location">
+                                </div>
+                                <div class="form-group">
+                                        <label for="location" style="color: #b5b5b5;">Input Tanggal</label>
+                                        <input class="form-control" name="date" type="datetime-local" value="2019-10-25T13:45:00" id="example-datetime-local-input">
+                                        
+                                </div>
+                            
+                            <br>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+                </div>
+    </section>
+</body>
+</html>

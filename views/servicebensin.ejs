@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/css') %>
+</head>
+    <%- include('partials/headerRegistration') %>
+   
+<body style="background-image:url('img/bg-service.jpg'); width: 100%;">
+    <section id="about" class="registration-section text-center" style="margin-top: 15%;margin-bottom: 15%;">
+            <div class="container" style="width: 30%; height: 100%; margin-top: 100px;">
+                    <form action="" method="POST">
+                        <h2 style="color: whitesmoke;">Service Form</h2>
+                            <div class="form-group" style="width: 100%;">
+                                <label for="inputService" style="color: #b5b5b5;">Service</label>
+                                <select name='service' id="inputService" class="form-control">
+                                  <option selected>Choose...</option>
+                                  <option value='pertamax (Rp.40.000 / 2 liter)'>Pertamax (Rp.40.000 / 2 liter)</option>
+                                  <option value='pertalite (Rp.30.000 / 2 liter)'>Pertalite (Rp.30.000 / 2 liter)</option>
+                                  <option value='premium (Rp.25.000 / 2 liter)'>Premium (Rp.25.000 / 2 liter)</option>
+                                  <option value='solar (Rp.30.000 / 2 liter)'>Solar (Rp.30.000 / 2 liter)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                    <label for="location" style="color: #b5b5b5;">Lokasi</label>
+                                    <input type="type" name="location" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter location">
+                                  </div>
+                                  <div class="form-group">
+                                        <label for="location" style="color: #b5b5b5;">Input Tanggal</label>
+                                        <input  name="date" class="form-control" type="datetime-local" value="2019-10-25T13:45:00" id="example-datetime-local-input">
+                                </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+                </div>
+    </section>
+</body>
+</html>

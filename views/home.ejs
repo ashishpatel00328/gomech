@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/css') %>
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  
+  <%- include('partials/header') %>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">Mogok?</h1>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">Selama masih ada sinyal, jangan khawatir</h2>
+        <a href="#about" class="btn btn-primary js-scroll-trigger">Butuh bantuan</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class = "icon">
+                <img src="img/icon-1" style="margin-bottom: 50px; margin-left: 20px; margin-right: 20px;" >
+                <img src="img/icon-2" style="margin-bottom: 50px; margin-left: 20px; margin-right: 20px;" >
+                <img src="img/icon-3" style="margin-bottom: 50px; margin-left: 20px; margin-right: 20px;" >
+              </div>
+              <br>
+          <h2 class="text-white mb-4">Go Mech : Mechanic On The Go</h2>
+          <p class="text-white-50">Kami siap datang untuk mengatasi permasalahan otomotif anda.
+           Dengan <a href=contact"> Go Mech </a>. Udah bukan jamannya nyamperin bengkel. Bengkel yang nyamperin anda.</p>
+        </div>
+      </div>
+      <img src="img/ipad.png" class="img-fluid" alt="">
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section bg-light">
+     
+    <div class="container">
+        <br>
+        <br>
+      <!-- Service Bensin-->
+      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+        <div class="col-lg-6">
+          <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
+        </div>
+        <div class="col-lg-6">
+          <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-left">
+                <h4 class="text-white">Bensin On The Way</h4>
+                <p class="mb-0 text-white-50">Bensin habis ditengah jalan dan tidak ada pom bensin sejauh mata memandang?<br>
+                  Kami siap datang!</p>
+                <hr class="d-none d-lg-block mb-0 ml-0">
+                <br>
+                <%  if (checklogin(user)) { %>
+                  <button onclick="window.location.href = '/serviceautocare'" class="btn btn-primary mx-auto">Pesan Sekarang</button>
+                <% } else { %>
+                <button data-toggle="modal" data-target="#modalLoginForm" class="btn btn-primary mx-auto">Pesan Sekarang</button>
+              <% } %>              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <!-- Service Oli -->
+      <div class="row justify-content-center no-gutters">
+        <div class="col-lg-6">
+          <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
+        </div>
+        <div class="col-lg-6 order-lg-first">
+          <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-right">
+                <h4 class="text-white">Ganti Oli ga pake pergi</h4>
+                <p class="mb-0 text-white-50"> Sudah jadwalnya ganti oli tapi mager ke bengkel? Kami yang datang buat ganti oli.</p>
+                <hr class="d-none d-lg-block mb-0 mr-0">
+                <br>
+                <%  if (checklogin(user)) { %>
+                <button onclick="window.location.href = '/serviceoli';" type="submit" class="btn btn-primary mx-auto">Pesan Sekarang</button>
+                <% } else { %>
+                <button data-toggle="modal" data-target="#modalLoginForm" class="btn btn-primary mx-auto">Pesan Sekarang</button>
+              <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <!-- Service Ban -->
+      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+        <div class="col-lg-6">
+          <img class="img-fluid" src="img/demo-image-03.jpg" alt="">
+        </div>
+        <div class="col-lg-6">
+          <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-left">
+                <h4 class="text-white">Tambal Ban Now</h4>
+                <p class="mb-0 text-white-50">Bingung tiba-tiba ban kempes? Jangan gundah gulana, kami solusi nyata.</p>
+                <hr class="d-none d-lg-block mb-0 ml-0">
+                <br>
+                <%  if (checklogin(user)) { %>
+                  <button onclick="window.location.href = '/serviceban';" class="btn btn-primary mx-auto">Pesan Sekarang</button>
+                  <% } else { %>
+                  <button data-toggle="modal" data-target="#modalLoginForm" class="btn btn-primary mx-auto">Pesan Sekarang</button>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+       <!-- Service AutoCare -->
+      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+        <div class="col-xl-8 col-lg-7">
+          <img class="img-fluid mb-3 mb-lg-0" src="img/demo-image-04.jpg" alt="">
+        </div>
+        <div class="col-xl-4 col-lg-5">
+          <div class="featured-text text-center text-lg-left">
+            <h4>AutoCare</h4>
+            <p class="text-black-50 mb-0">Motor atau mobil anda tidak bisa nyala? Ganti spare-part? Mekanik kami siap terjun langsung ke rumah anda!</p>
+            <br>
+            <%  if (checklogin(user)) { %>
+              <button onclick="window.location.href = '/serviceautocare';" class="btn btn-primary mx-auto">Pesan Sekarang</button>
+              <% } else { %>
+              <button data-toggle="modal" data-target="#modalLoginForm" class="btn btn-primary mx-auto">Pesan Sekarang</button>
+            <% } %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  
+  <section class="contact-section bg-black" id="contact">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+              <h4 class="text-uppercase m-0">Alamat</h4>
+              <hr class="my-4">
+              <div class="small text-black-50">Jl. Sultan Iskandar Dianta no.32, Jakarta Selatan</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-envelope text-primary mb-2"></i>
+              <h4 class="text-uppercase m-0">Email</h4>
+              <hr class="my-4">
+              <div class="small text-black-50">
+                <%- include('partials/emailpopup') %>
+                <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#modalEmailForm" >go.mech.id@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-mobile-alt text-primary mb-2"></i>
+              <h4 class="text-uppercase m-0">Phone</h4>
+              <hr class="my-4">
+              <div class="small text-black-50">14045 - 571142</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social d-flex justify-content-center">
+        <a href="https://twitter.com/" target="_blank" class="mx-2">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://id-id.facebook.com/"  target="_blank" class="mx-2">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://github.com/dwitamaalfred"  target="_blank" class="mx-2">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://github.com/anggabanny" target="_blank" class="mx-2">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+
+    </div>
+  </section> 
+
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+    <div class="container">
+      Copyright &copy; Your Website 2019
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
+
+</body>
+</html>

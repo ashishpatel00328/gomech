@@ -1,0 +1,168 @@
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Go Mechanic</title>
+  <link rel="icon" href="./img/logo.jpg" type="icon">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/grayscale.min.css" rel="stylesheet">
+
+  <!-- Login PopUp Section -->
+
+  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <% if(alert) {%>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert">
+            <strong>ALERT!</strong> &nbsp <%= alert %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                onclick="hiddenAlert()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+      <% } %>
+      <form action="/" method="post">
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <i class="fas fa-envelope prefix grey-text"></i>
+            <input type="email" id="defaultForm-email" class="form-control validate" name="email">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+          </div>
+          <div class="md-form mb-4">
+            <i class="fas fa-lock prefix grey-text"></i>
+            <input type="password" id="defaultForm-pass" class="form-control validate" name="password">
+            <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+          </div>
+          <button type="submit" class="btn btn-primary mx-auto">Login</button>
+          <br>
+          <br>
+          <p>dont have an account?  <a href="#" data-toggle="modal" data-target="#modalSignUpForm" data-target="#modalLoginForm">register</a></p>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+        </div>
+      </div>
+      </form>
+  </div>
+</div>
+
+<div class="modal fade" id="modalSignUpForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign Up</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/signup" method="post">
+        <div class="modal-body mx-5">
+          <div class="md-form mb-5">
+            <i class="fas fa-address-book prefix grey-text"></i>
+            <input type="text" id="defaultForm-email" value="<%=obj.name ? obj.name : '' %>" class="form-control validate <%= path == 'name' ? 'is-invalid' : '' %>" name="name">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Your Name</label>
+            <% if(path == 'name'){%>
+            <div class="invalid-feedback"> <%= err %> </div>
+            <% } else {%>
+            <div class="valid-feedback"> Looks good! </div>
+            <% }%>
+            </div>
+          <div class="md-form mb-5">
+            <i class="fas fa-envelope prefix grey-text"></i>
+            <input type="email" id="defaultForm-email" value="<%=obj.email ? obj.email : ''%>" class="form-control validate <%= path == 'email' ? 'is-invalid' : '' %>" name="email">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+            <% if(path == 'email'){%>
+              <div class="invalid-feedback"> <%= err %> </div>
+              <% } else {%>
+              <div class="valid-feedback"> Looks good! </div>
+              <% }%>
+          </div>
+          <div class="md-form mb-5">
+            <i class="fas fa-address-book prefix grey-text"></i>
+            <input type="number" id="defaultForm-email" value="<%=obj.phone ? obj.phone : ''%>" class="form-control validate <%= path == 'phone' ? 'is-invalid' : '' %>" name="phone">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Your Phone</label>
+            <% if(path == 'phone'){%>
+              <div class="invalid-feedback"> <%= err %> </div>
+              <% } else {%>
+              <div class="valid-feedback"> Looks good! </div>
+            <% }%>
+          </div>
+          <div class="md-form mb-4">
+            <i class="fas fa-lock prefix grey-text"></i>
+            <input type="password" id="defaultForm-pass" class="form-control validate <%= path == 'password' ? 'is-invalid' : '' %>" name="password">
+            <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+            <% if(path == 'password'){%>
+              <div class="invalid-feedback"> <%= err %> </div>
+              <% } else {%>
+              <div class="valid-feedback"> Looks good! </div>
+            <% }%>
+          </div>
+          <button type="submit" class="btn btn-primary mx-auto">SignUp</button>
+          <br>
+          <br>
+          <!-- <p>have an account?  <a href="#" data-toggle="modal" data-target="#modalLoginForm">login</a></p> -->
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Register Mechanic PopUp Section -->
+
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Register Mechanic</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-3">
+      <div class="md-form mb-5">
+
+          <form action="/admin/register" method="post">
+          <label for="inputService" style="color: #b5b5b5;" name = "name">Full Name</label>
+        <input type="text" id="defaultForm-email" class="form-control validate" name='fullName' >
+      </div>
+      <div class="form-group" style="width: 100%;">
+
+          <label for="inputService" style="color: #b5b5b5;">Service</label>
+          <select name='serviceId' id="inputService" class="form-control">
+            <option selected>Choose...</option>
+            <option value='1'>Mekanik Bensin</option>
+            <option value='2'>Mekanik Ban</option>
+            <option value='3'>Mekanik Oli</option>
+            <option value='4'>Mekanik Auto Care</option>
+          </select>
+      </div>
+      <button type="submit" class="btn btn-primary mx-auto">Register</button>
+      <br>
+      <br>
+    </form>
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+    </div>
+  </div>
+</div>
+</div>
