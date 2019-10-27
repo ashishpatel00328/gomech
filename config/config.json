@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production" : {
-    "username": "postgres",
-    "password": null,
-    "database": "GoMech",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "culfdcvcbpsyoz",
+    "password": "bcf4784e8682b32c91579c10068d4a768f44ee241dec558176142558a046b590",
+    "database": "d8t1tpq4nq67t0",
+    "host": "ec2-54-235-163-246.compute-1.amazonaws.com",
+    "dialect": "postgres"
   }
 }
