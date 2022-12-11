@@ -21,7 +21,7 @@
   "dependencies": {
     "bcrypt": "^3.0.6",
     "ejs": "^2.7.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.0",
     "handlebars": "^4.4.5",
     "nodemailer": "^6.3.1",
